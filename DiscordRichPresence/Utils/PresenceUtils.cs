@@ -1,4 +1,4 @@
-﻿using Discord;
+using Discord;
 using RoR2;
 using System;
 using static DiscordRichPresence.DiscordRichPresencePlugin;
