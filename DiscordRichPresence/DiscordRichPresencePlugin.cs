@@ -43,17 +43,6 @@ namespace DiscordRichPresence
         public static string CurrentBoss { get; set; }
 
         public static bool IsInEOSLobby => EOSLobbyManager.GetFromPlatformSystems() != null && EOSLobbyManager.GetFromPlatformSystems().isInLobby;
-        
-        private void Start()
-        {
-            Client = new Discord.Discord(992086428240580720, (ulong)CreateFlags.NoRequireDiscord);
-            ChangeActivity();
-        }
-
-        private void OnDiscordDisable()
-        {
-            Client.Dispose();
-        }
 
         public void ChangeActivity()
         {
