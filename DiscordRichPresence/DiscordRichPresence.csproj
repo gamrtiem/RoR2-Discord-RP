@@ -24,6 +24,7 @@
 	<PackageReference Include="MMHOOK.RoR2" Version="2024.11.4">
 		<NoWarn>NU1701</NoWarn>
 	</PackageReference>
+	<PackageReference Include="Rune580.Mods.RiskOfRain2.RiskOfOptions" Version="2.8.3" />
   </ItemGroup>
 
   <ItemGroup>

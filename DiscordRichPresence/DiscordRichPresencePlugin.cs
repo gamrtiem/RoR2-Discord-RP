@@ -14,7 +14,7 @@ using UnityEngine.SceneManagement;
 
 namespace DiscordRichPresence
 {
-    [BepInPlugin("com.cuno.discord", "Discord Rich Presence", "1.3.2")]
+    [BepInPlugin("com.cuno.discord", "Discord Rich Presence", "1.3.3")]
 
     [NetworkCompatibility(CompatibilityLevel.NoNeedForSync, VersionStrictness.DifferentModVersionsAreOk)]
 
@@ -43,17 +43,6 @@ namespace DiscordRichPresence
         public static string CurrentBoss { get; set; }
 
         public static bool IsInEOSLobby => EOSLobbyManager.GetFromPlatformSystems() != null && EOSLobbyManager.GetFromPlatformSystems().isInLobby;
-        
-        private void Start()
-        {
-            Client = new Discord.Discord(992086428240580720, (ulong)CreateFlags.NoRequireDiscord);
-            ChangeActivity();
-        }
-
-        private void OnDiscordDisable()
-        {
-            Client.Dispose();
-        }
 
         public void ChangeActivity()
         {
@@ -81,6 +70,12 @@ namespace DiscordRichPresence
             
         }
         
+        private void Start()
+        {
+            Client = new Discord.Discord(992086428240580720, (ulong)CreateFlags.NoRequireDiscord);
+            ChangeActivity();
+        }
+        
 
         public void Awake()
         {
@@ -88,8 +83,8 @@ namespace DiscordRichPresence
             LoggerEXT = Logger;
             Logger.LogInfo("Starting Discord Rich Presence...");
             
-            Client = new Discord.Discord(992086428240580720, (ulong)CreateFlags.NoRequireDiscord);
-            ChangeActivity();
+            //Client = new Discord.Discord(992086428240580720, (ulong)CreateFlags.NoRequireDiscord);
+            //ChangeActivity();
             
             var activityManager = Client.GetActivityManager();
             Client.GetActivityManager();
