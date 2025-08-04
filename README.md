@@ -11,6 +11,9 @@ A plethora of options are provided to fine-tune the presence settings, such as w
 
 If you experience any issues or have any suggestions, please contact me! I can be found on the RoR2 Modding Discord server, as `mikhailmcraft`.
 
+## Linux Users
+If you are on Linux and having trouble running the mod, please use [rpc-bridge](https://github.com/EnderIce2/rpc-bridge) by EnderIce2 and follow the installation instructions there!
+
 ## Images
 Selecting a character
 
