@@ -43,16 +43,16 @@ namespace DiscordRichPresence.Hooks
                 return;
             }
 
-            //LoggerEXT.LogInfo("LocalBodyBaseName: " + localBody.baseNameToken); //!!!USE THIS!!!
-            //LoggerEXT.LogInfo("LocalBodyBaseName: " + InfoTextUtils.GetCharacterInternalName(localBody.GetDisplayName())); //for testing :3 
+            var survivorname = InfoTextUtils.GetCharacterInternalName(localBody.baseNameToken);
+            LoggerEXT.LogInfo($"nametoken :{localBody.baseNameToken} !!! found {survivorname} ,.."); //!!!USE THIS!!!
             
             var richPresence = RichPresence;
-            richPresence.Assets.SmallImage = "https://raw.githubusercontent.com/mikhailmikhalchuk/RoR2-Discord-RP/refs/heads/master/Assets/Characters/" + InfoTextUtils.GetCharacterInternalName(localBody.GetDisplayName()) + ".png";
+            richPresence.Assets.SmallImage = $"https://raw.githubusercontent.com/mikhailmikhalchuk/RoR2-Discord-RP/refs/heads/master/Assets/Characters/{survivorname}.png";
             richPresence.Assets.SmallText = localBody.GetDisplayName();
             var activityManager = Client.GetActivityManager();
             activityManager.UpdateActivity(richPresence, (result =>
             {
-                LoggerEXT.LogInfo("activity updated, " + result);
+                //LoggerEXT.LogInfo("activity updated, " + result);
             }));
             PresenceUtils.SetStagePresence(Client, richPresence, CurrentScene, Run.instance);
         }

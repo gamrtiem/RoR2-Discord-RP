@@ -6,6 +6,7 @@ using DiscordRichPresence.Hooks;
 using DiscordRichPresence.Utils;
 using RoR2;
 using R2API.Utils;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Thanks to WhelanB (to which this repository originates from)
@@ -68,6 +69,18 @@ namespace DiscordRichPresence
                 LoggerEXT.LogInfo("discord is null");
             }
             
+            //use this for debugging surv and stage nametokens 
+            if (Input.GetKeyDown(KeyCode.F2))
+            {
+                foreach (var sceneDef in SceneCatalog.allStageSceneDefs)
+                {
+                    LoggerEXT.LogDebug($"scene name: \"{sceneDef.baseSceneName}\", name token \"{sceneDef.nameToken}\"");
+                }
+                foreach (var survDef in SurvivorCatalog.allSurvivorDefs)
+                {
+                    LoggerEXT.LogDebug($"surv name: \"{survDef.cachedName}\", name token \"{survDef.displayNameToken}\"");
+                }
+            }
         }
         
         private void Start()
