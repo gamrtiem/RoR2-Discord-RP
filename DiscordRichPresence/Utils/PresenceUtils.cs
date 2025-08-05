@@ -22,8 +22,11 @@ namespace DiscordRichPresence.Utils
             LoggerEXT.LogInfo("baseSceneName: " + scene.nameToken); // uhhh yeah 
 
             var sceneName = "riskofrain2";
-            
-            if (InfoTextUtils.StagesWithAssets.Contains(scene.baseSceneName))
+            if (InfoTextUtils.StagesWithAssets.Contains(scene.nameToken))
+            {
+                sceneName = scene.nameToken;
+            } 
+            else if (InfoTextUtils.StagesWithAssets.Contains(scene.baseSceneName)) //fallback
             {
                 sceneName = scene.baseSceneName;
             }

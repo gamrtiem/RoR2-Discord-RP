@@ -44,6 +44,10 @@ namespace DiscordRichPresence.Hooks
             }
 
             var survivorname = InfoTextUtils.GetCharacterInternalName(localBody.baseNameToken);
+            if (survivorname == "unknown" && InfoTextUtils.CharactersWithAssets.Contains(localBody.GetDisplayName())) //fallback
+            {
+                survivorname = InfoTextUtils.GetCharacterInternalName(localBody.GetDisplayName());
+            }
             LoggerEXT.LogInfo($"nametoken :{localBody.baseNameToken} !!! found {survivorname} ,.."); //!!!USE THIS!!!
             
             var richPresence = RichPresence;
