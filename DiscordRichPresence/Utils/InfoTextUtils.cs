@@ -137,7 +137,7 @@ namespace DiscordRichPresence.Utils
             "SNOWTIME_MAP_NMB_0",
             "SNOWTIME_MAP_SHRINE_0",
             "SNOWTIME_MAP_SW_0",
-            "SNOWTIME_MsAP_GMC_0",
+            "SNOWTIME_MAP_GMC_0",
         };
         public enum StyleTag : byte
         {
@@ -161,7 +161,7 @@ namespace DiscordRichPresence.Utils
         {
             if (CharactersWithAssets.Contains(name))
             {
-                return CharactersWithAssets.Find(c => c == name).ToLower().Replace(" ", "");
+                return CharactersWithAssets.Find(c => c == name);
             }
             return "unknown";
         }

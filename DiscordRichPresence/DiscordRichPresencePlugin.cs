@@ -96,8 +96,8 @@ namespace DiscordRichPresence
             LoggerEXT = Logger;
             Logger.LogInfo("Starting Discord Rich Presence...");
             
-            //Client = new Discord.Discord(992086428240580720, (ulong)CreateFlags.NoRequireDiscord);
-            //ChangeActivity();
+            Client = new Discord.Discord(992086428240580720, (ulong)CreateFlags.NoRequireDiscord);
+            ChangeActivity();
             
             var activityManager = Client.GetActivityManager();
             Client.GetActivityManager();

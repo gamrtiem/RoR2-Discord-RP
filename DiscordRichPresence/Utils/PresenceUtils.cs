@@ -31,7 +31,7 @@ namespace DiscordRichPresence.Utils
                 sceneName = scene.baseSceneName;
             }
             
-            richPresence.Assets.LargeImage = $"https://raw.githubusercontent.com/mikhailmikhalchuk/RoR2-Discord-RP/refs/heads/master/Assets/{sceneName}.png";
+            richPresence.Assets.LargeImage = $"https://raw.githubusercontent.com/gamrtiem/RoR2-Discord-RP/refs/heads/master/Assets/{sceneName}.png";
             richPresence.Assets.LargeText = "DiscordRichPresence v" + Instance.Info.Metadata.Version;
 
             richPresence.State = $"Stage {run.stageClearCount + 1} - {Language.GetString(scene.nameToken)}";
