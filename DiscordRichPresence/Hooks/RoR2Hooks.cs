@@ -44,10 +44,24 @@ namespace DiscordRichPresence.Hooks
             }
 
             var survivorname = InfoTextUtils.GetCharacterInternalName(localBody.baseNameToken);
-            if (survivorname == "unknown" && InfoTextUtils.CharactersWithAssets.Contains(localBody.GetDisplayName().ToLower().Replace(" ", ""))) //fallback
+            if (survivorname == "unknown") //fallback
             {
-                survivorname = InfoTextUtils.GetCharacterInternalName(localBody.GetDisplayName().ToLower().Replace(" ", ""));
-            }
+                if (InfoTextUtils.CharactersWithAssets.Contains(localBody.GetDisplayName().ToLower().Replace(" ", "")))
+                {
+                    survivorname = InfoTextUtils.GetCharacterInternalName(localBody.GetDisplayName().ToLower().Replace(" ", ""));
+                }
+                else
+                {
+                    //basically the easiest way to grab all the survivor icons is through the survivor catalog, then pull the names/icons through the survivor defs
+                    // butttttttttt,, they can be mismatched from the localbody name that discord rpc uses (ss2 looking at u ,..,., 
+                    //so as a last ditch we try grabbing it from the survivor def in case theres some mismatches in the repo (can happen when doing alot of them in batch
+                    var survdefname = SurvivorCatalog.GetSurvivorDef(SurvivorCatalog.GetSurvivorIndexFromBodyIndex(localBody.bodyIndex))?.displayNameToken;
+                    if (survdefname != null && InfoTextUtils.CharactersWithAssets.Contains(survdefname))
+                    {
+                        survivorname = InfoTextUtils.GetCharacterInternalName(survdefname);
+                    }
+                }
+            } 
             //LoggerEXT.LogInfo($"nametoken :{localBody.baseNameToken} !!! found {survivorname} ,.."); //!!!USE THIS!!!
             
             var richPresence = RichPresence;

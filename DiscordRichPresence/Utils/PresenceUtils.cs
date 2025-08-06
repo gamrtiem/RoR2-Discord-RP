@@ -19,7 +19,7 @@ namespace DiscordRichPresence.Utils
                 LoggerEXT.LogError("Scene is null. Check for its null status before passing it as a parameter. Stack trace follows:");
             }
             
-            LoggerEXT.LogInfo("baseSceneName: " + scene.nameToken); // uhhh yeah 
+            //LoggerEXT.LogInfo("baseSceneName: " + scene.nameToken); // uhhh yeah 
 
             var sceneName = "riskofrain2";
             if (InfoTextUtils.StagesWithAssets.Contains(scene.nameToken))
