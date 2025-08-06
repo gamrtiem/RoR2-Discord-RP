@@ -30,7 +30,7 @@ namespace DiscordRichPresence.Hooks
             var activityManager = Client.GetActivityManager();
             activityManager.UpdateActivity(richPresence, (result =>
             {
-                LoggerEXT.LogInfo("activity updated, " + result);
+                //LoggerEXT.LogInfo("activity updated, " + result);
             }));
             PresenceUtils.SetStagePresence(Client, richPresence, CurrentScene, Run.instance);
         }
@@ -48,7 +48,7 @@ namespace DiscordRichPresence.Hooks
             {
                 survivorname = InfoTextUtils.GetCharacterInternalName(localBody.GetDisplayName().ToLower().Replace(" ", ""));
             }
-            LoggerEXT.LogInfo($"nametoken :{localBody.baseNameToken} !!! found {survivorname} ,.."); //!!!USE THIS!!!
+            //LoggerEXT.LogInfo($"nametoken :{localBody.baseNameToken} !!! found {survivorname} ,.."); //!!!USE THIS!!!
             
             var richPresence = RichPresence;
             richPresence.Assets.SmallImage = $"https://raw.githubusercontent.com/gamrtiem/RoR2-Discord-RP/refs/heads/master/Assets/Characters/{survivorname}.png";
@@ -58,7 +58,7 @@ namespace DiscordRichPresence.Hooks
             {
                 //LoggerEXT.LogInfo("activity updated, " + result);
             }));
-            LoggerEXT.LogInfo(richPresence.Assets.SmallImage);
+            //LoggerEXT.LogInfo(richPresence.Assets.SmallImage);
             PresenceUtils.SetStagePresence(Client, richPresence, CurrentScene, Run.instance);
         }
 
@@ -165,7 +165,7 @@ namespace DiscordRichPresence.Hooks
             
             activityManager.UpdateActivity(richPresence, (result =>
             {
-                LoggerEXT.LogInfo("activity updated, " + result);
+                //LoggerEXT.LogInfo("activity updated, " + result);
             }));
             
             RichPresence = richPresence;
