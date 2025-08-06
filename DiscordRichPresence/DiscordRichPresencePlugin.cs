@@ -78,7 +78,7 @@ namespace DiscordRichPresence
             //     }
             //     foreach (var survDef in SurvivorCatalog.allSurvivorDefs)
             //     {
-            //         LoggerEXT.LogDebug($"surv name: \"{survDef.cachedName}\", name token \"{survDef.displayNameToken}\"");
+            //         LoggerEXT.LogDebug($"surv name: \"{survDef.cachedName}\", name token \"{survDef.displayNameToken}\""); //these are sometimes wrong ?? looking at you ss2 ,,..,
             //     }
             // }
         }
