@@ -1,6 +1,7 @@
 ﻿using Discord;
 using RoR2;
 using System;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using static DiscordRichPresence.DiscordRichPresencePlugin;
 
@@ -31,7 +32,7 @@ namespace DiscordRichPresence.Utils
                 sceneName = scene.baseSceneName;
             }
             
-            richPresence.Assets.LargeImage = $"https://raw.githubusercontent.com/gamrtiem/RoR2-Discord-RP/refs/heads/master/Assets/{sceneName}.png";
+            richPresence.Assets.LargeImage = $"https://raw.githubusercontent.com/mikhailmikhalchuk/RoR2-Discord-RP/refs/heads/master/Assets/{sceneName}.png";
             richPresence.Assets.LargeText = "DiscordRichPresence v" + Instance.Info.Metadata.Version;
 
             richPresence.State = $"Stage {run.stageClearCount + 1} - {Language.GetString(scene.nameToken)}";
@@ -41,6 +42,7 @@ namespace DiscordRichPresence.Utils
             }
 
             string currentDifficultyString = Language.GetString(DifficultyCatalog.GetDifficultyDef(run.selectedDifficulty).nameToken);
+            currentDifficultyString = Regex.Replace(currentDifficultyString, "<.*?>", string.Empty); //remove <style> tags which fixes infernal eclipse
             richPresence.Timestamps = new ActivityTimestamps(); // Clear timestamps
             richPresence.Secrets = new ActivitySecrets(); // Clear lobby join
 

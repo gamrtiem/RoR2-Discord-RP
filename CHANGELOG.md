@@ -3,9 +3,10 @@
 - Changed how stage and survivor icons were obtained internally to use name tokens instead of body names (this should fix issues relating to playing in different languages!)
 - Added support for Snowtime Stages
 - Added support for Raindrop Lobotomy 
-- Added support for Videogame Mod 2 Unofficial (ssu chirr and nemmando should have proper icons now)
+- Added support for Videogame Mod 2 Unofficial (SSU chirr and nemmando should have proper icons now)
 - Added support for Dante
 - Added support for Banshee
+- Fixed Infernal Eclipse showing style tags in status
 - Commented out activity updated logs 
 
 ### 1.3.3 ###
