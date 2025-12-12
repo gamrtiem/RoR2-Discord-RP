@@ -55,9 +55,6 @@
     <Reference Include="RiskOfOptions">
       <HintPath>libs\RiskOfOptions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityNamedPipe">
-	  <HintPath>libs\UnityNamedPipe.dll</HintPath>
-    </Reference>
     <Reference Include="Wwise">
       <HintPath>libs\Wwise.dll</HintPath>
     </Reference>
